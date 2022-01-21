@@ -1,7 +1,7 @@
 #ifndef _Trie_
 #define _Trie_
 
-#include <string>
+#include <string_view>
 #include <map>
 
 using namespace std;

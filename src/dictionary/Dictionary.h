@@ -1,7 +1,7 @@
 #ifndef _Dictionary_
 #define _Dictionary_
 
-#include <string>
+#include <string_view>
 #include "Trie.h"
 
 using namespace std;
