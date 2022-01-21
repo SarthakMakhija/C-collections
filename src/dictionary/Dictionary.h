@@ -8,7 +8,7 @@ using namespace std;
 
 class Dictionary {
     private:
-    Trie *root;
+    unique_ptr<Trie> root;
 
     public:
     Dictionary();

@@ -2,7 +2,7 @@
 #include "Dictionary.h"
 
 Dictionary::Dictionary() {
-    this -> root = new Trie();
+    this -> root = make_unique<Trie>();
 }
 
 void Dictionary::add(string_view word) {
