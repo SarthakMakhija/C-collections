@@ -14,9 +14,11 @@ class LinkedListNode {
 
     public:
     LinkedListNode(string key, string value);
+
     bool matches(string key);
     void addNext(unique_ptr<LinkedListNode> node);
     void addNext(string key, string value);
+    
     string getKey(); 
     string getValue();
     LinkedListNode* getNext();

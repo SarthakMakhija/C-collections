@@ -13,10 +13,12 @@ class LinkedList {
     private:
     unique_ptr<LinkedListNode> head;
     unique_ptr<LinkedListNode> current;
+
     pair<bool, string> findIf(function<bool (LinkedListNode*)> condition);
 
     public:
     LinkedList();
+    
     void add(string key, string value);
     bool contains(string key);
     string getBy(string key);

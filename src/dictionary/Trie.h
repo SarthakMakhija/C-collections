@@ -11,10 +11,12 @@ class Trie {
     private:
     map<char, unique_ptr<Trie>> trieByCharacter;
     bool endOfWord;
+
     bool has(char ch);
 
     public:
     Trie();
+    
     void add(string_view word);
     bool contains(string_view word);
 };
