@@ -11,6 +11,8 @@ class Trie {
     map<char, Trie*> trieByCharacter;
     bool endOfWord;
 
+    bool has(char ch);
+
     public:
     Trie();
     void add(string word);
