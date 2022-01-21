@@ -12,7 +12,6 @@ using namespace std;
 class LinkedList {
     private:
     unique_ptr<LinkedListNode> head;
-    unique_ptr<LinkedListNode> current;
 
     pair<bool, string> findIf(function<bool (const LinkedListNode*)> condition);
 
