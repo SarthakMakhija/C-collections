@@ -41,3 +41,12 @@ Both src and test folders contain `list`, `dictionary` and `tree` folders repres
 - Execute collections_tests
 
     `./collections_tests`
+
+### Pending things to explore
+1. Using CMake to depend on external pmdk package (any external package other than Google test)
+2. Running any static checking C++ tools in pipeline
+3. Integrating (2) in CMake
+4. Cross platform build
+5. Any tool to detect memory leak in the code
+6. Integrating (5) in CMake
+7. Integrating (5) in pipeline
