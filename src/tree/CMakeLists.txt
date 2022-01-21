@@ -1,0 +1,1 @@
+add_library(binarySearchTree BinarySearchTree.h BinarySearchTree.cpp BinarySearchTreeNode.h BinarySearchTreeNode.cpp)

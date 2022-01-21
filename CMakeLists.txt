@@ -20,6 +20,7 @@ FetchContent_MakeAvailable(googletest)
 # include linkedlist library
 add_subdirectory(src/list)
 add_subdirectory(src/dictionary)
+add_subdirectory(src/tree)
 
 # Enable testing
 add_executable(collections_tests "")
@@ -28,12 +29,14 @@ target_sources(collections_tests
 	test/list/LinkedList_unit_test.cpp
   test/list/LinkedListNode_unit_test.cpp
   test/dictionary/Dictionary_unit_test.cpp
+  test/tree/BinarySearchTree_unit_test.cpp
 )
 
 target_link_libraries(collections_tests
   	PRIVATE
     linkedlist
     dictionary
+    binarySearchTree
     gtest_main
 )
 
