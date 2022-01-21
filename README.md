@@ -6,8 +6,10 @@
 
 ### Project Structure
 Project includes `src` and `test` folders representing source and test code. 
+
 Both src and test folders contain `list` and `dictionary` folders representing `LinkedList` and Dictionary using `Trie`. 
-`GTest` framework is used for writing tests and `CMake` is used for builing the project.
+
+`GoogleTest` framework is used for writing tests and `CMake` is used for builing the project.
 
 ### Building the project
 - Install CMake
