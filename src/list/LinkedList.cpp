@@ -27,6 +27,16 @@ string LinkedList::getBy(string key) {
     }).second;
 }
 
+vector<string> LinkedList::allKeys() {
+    LinkedListNode *node = this -> head;
+    vector<string> keys;
+    while (node != nullptr) {
+        keys.push_back(node -> getKey());
+        node = node -> getNext();
+    }
+    return keys;
+}
+
 pair<bool, string> LinkedList::findIf(function<bool (LinkedListNode*)> condition) {
     LinkedListNode *node = this -> head;
     while (node != nullptr) {
@@ -36,14 +46,4 @@ pair<bool, string> LinkedList::findIf(function<bool (LinkedListNode*)> condition
         node = node -> getNext();
     }
     return make_pair(false, "");
-}
-
-vector<string> LinkedList::allKeys() {
-    LinkedListNode *node = this -> head;
-    vector<string> keys;
-    while (node != nullptr) {
-        keys.push_back(node -> getKey());
-        node = node -> getNext();
-    }
-    return keys;
 }
