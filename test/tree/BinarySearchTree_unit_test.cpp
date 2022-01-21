@@ -20,7 +20,7 @@ TEST(BinarySearchTree, getsValueByKey2) {
   ASSERT_EQ(binarySearchTree -> getBy("Brown"), "Color");
 }
 
-TEST(BST, allKeys) {
+TEST(BinarySearchTree, allKeys) {
   BinarySearchTree *binarySearchTree = new BinarySearchTree();
   binarySearchTree -> add("Company", "TW");
   binarySearchTree -> add("Fruit", "Apple");
