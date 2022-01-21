@@ -1,6 +1,6 @@
 ### LinkedList and trie implementation in C++
 
-[![Actions Status](https://github.com/SarthakMakhija/C-collections/workflows/CMake/badge.svg)](https://github.com/SarthakMakhija/C-collections/actions)
+[![Actions Status](https://github.com/SarthakMakhija/CPP-collections/workflows/CMake/badge.svg)](https://github.com/SarthakMakhija/CPP-collections/actions)
 
 ### Building the project
 - Install CMake
