@@ -1,0 +1,1 @@
+add_library(dictionary Dictionary.h Dictionary.cpp Trie.h Trie.cpp)
