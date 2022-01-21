@@ -60,11 +60,11 @@ pair<bool, string> LinkedList::findIf(function<bool (const LinkedListNode*)> con
 
 
 LinkedListNode* LinkedList::executeWhile(function<bool (const LinkedListNode*)> condition, 
-                                         function<void (const LinkedListNode*)> execute) {
+                                         function<void (const LinkedListNode*)> block) {
 
     LinkedListNode *node = this -> head.get();
     while (condition(node)) {
-        execute(node);
+        block(node);
         node = node -> getNext();
     }
     return node;

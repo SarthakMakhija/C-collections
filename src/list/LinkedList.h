@@ -24,6 +24,6 @@ class LinkedList {
     string getBy(string key);
     vector<string> allKeys();
     LinkedListNode* executeWhile(function<bool (const LinkedListNode*)> condition, 
-                                 function<void (const LinkedListNode*)> execute = [](const LinkedListNode* node) {});
+                                 function<void (const LinkedListNode*)> block = [](const LinkedListNode* node) {});
 };
 #endif
