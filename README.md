@@ -1,10 +1,10 @@
-# LinkedList and trie implementation in C++
+### LinkedList and trie implementation in C++
 
-# Build Status
+### Build Status
 
 [![Actions Status](https://github.com/SarthakMakhija/CPP-collections/workflows/CMake/badge.svg)](https://github.com/SarthakMakhija/CPP-collections/actions)
 
-# Project Structure
+### Project Structure
 Project includes `src` and `test` folders representing source and test code. 
 Both src and test folders contain `list` and `dictionary` folders representing `LinkedList` and Dictionary using `Trie`. 
 `GTest` framework is used for writing tests and `CMake` is used for builing the project.
