@@ -23,7 +23,7 @@ class LinkedList {
     bool contains(string key);
     string getBy(string key);
     vector<string> allKeys();
-    LinkedListNode* executeUntil(function<bool (const LinkedListNode*)> condition, 
+    LinkedListNode* executeWhile(function<bool (const LinkedListNode*)> condition, 
                                  function<void (const LinkedListNode*)> execute = [](const LinkedListNode* node) {});
 };
 #endif

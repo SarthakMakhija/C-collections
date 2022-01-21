@@ -10,7 +10,7 @@ void LinkedList::add(string key, string value) {
         this -> head = make_unique<LinkedListNode>(key, value);
         return;
     }
-    LinkedListNode *node = this -> executeUntil(
+    LinkedListNode *node = this -> executeWhile(
         [] (const LinkedListNode* node) -> bool {
             return node -> getNext() != nullptr;
         }
@@ -36,7 +36,7 @@ string LinkedList::getBy(string key) {
 
 vector<string> LinkedList::allKeys() {
     vector<string> keys;
-    this -> executeUntil(
+    this -> executeWhile(
         [] (const LinkedListNode* node) -> bool {
             return node != nullptr;
         }, 
@@ -59,7 +59,7 @@ pair<bool, string> LinkedList::findIf(function<bool (const LinkedListNode*)> con
 }
 
 
-LinkedListNode* LinkedList::executeUntil(function<bool (const LinkedListNode*)> condition, 
+LinkedListNode* LinkedList::executeWhile(function<bool (const LinkedListNode*)> condition, 
                                          function<void (const LinkedListNode*)> execute) {
 
     LinkedListNode *node = this -> head.get();
