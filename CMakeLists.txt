@@ -26,8 +26,8 @@ add_executable(collections_tests "")
 target_sources(collections_tests
 	PRIVATE
 	test/list/LinkedList_unit_test.cpp
-    test/list/LinkedListNode_unit_test.cpp
-    test/dictionary/Dictionary_unit_test.cpp
+  test/list/LinkedListNode_unit_test.cpp
+  test/dictionary/Dictionary_unit_test.cpp
 )
 
 target_link_libraries(collections_tests
