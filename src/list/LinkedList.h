@@ -5,13 +5,14 @@
 #include <string>
 #include <vector>
 #include <functional>
+#include <memory>
 
 using namespace std;
 
 class LinkedList {
     private:
-    LinkedListNode *head;
-    LinkedListNode *current;
+    unique_ptr<LinkedListNode> head;
+    unique_ptr<LinkedListNode> current;
     pair<bool, string> findIf(function<bool (LinkedListNode*)> condition);
 
     public:

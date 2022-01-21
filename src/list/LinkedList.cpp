@@ -3,16 +3,18 @@
 
 LinkedList::LinkedList() {
     this -> head = nullptr;
-    this -> current = nullptr;
 }
 
 void LinkedList::add(string key, string value) {
     if (this -> head == nullptr) {
-        this -> head = new LinkedListNode(key, value);
-        this -> current = this -> head;
+        this -> head = make_unique<LinkedListNode>(key, value);
         return;
     }
-    this -> current = this -> current -> addNext(key, value);
+    LinkedListNode *node = this -> head.get();
+    while(node -> getNext() != nullptr) {
+        node = node -> getNext();
+    }
+    node -> addNext(key, value);
 }
 
 bool LinkedList::contains(string key) {
@@ -28,7 +30,7 @@ string LinkedList::getBy(string key) {
 }
 
 vector<string> LinkedList::allKeys() {
-    LinkedListNode *node = this -> head;
+    LinkedListNode *node = this -> head.get();
     vector<string> keys;
     while (node != nullptr) {
         keys.push_back(node -> getKey());
@@ -38,7 +40,7 @@ vector<string> LinkedList::allKeys() {
 }
 
 pair<bool, string> LinkedList::findIf(function<bool (LinkedListNode*)> condition) {
-    LinkedListNode *node = this -> head;
+    LinkedListNode *node = this -> head.get();
     while (node != nullptr) {
         if (condition(node)) {
             return make_pair(true, node -> getValue());

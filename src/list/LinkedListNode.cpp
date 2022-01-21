@@ -15,19 +15,18 @@ string LinkedListNode::getValue() {
 }
 
 LinkedListNode* LinkedListNode::getNext() {
-    return this -> next;
+    return this -> next.get();
 }
 
 bool LinkedListNode::matches(string key) {
     return this -> key == key;
 }
 
-LinkedListNode* LinkedListNode::addNext(string key, string value) {
-    LinkedListNode *next = new LinkedListNode(key, value);
-    this -> addNext(next);
-    return next;
+void LinkedListNode::addNext(string key, string value) {
+    unique_ptr<LinkedListNode> next = make_unique<LinkedListNode>(key, value);
+    this -> addNext(move(next));
 }
 
-void LinkedListNode::addNext(LinkedListNode *node) {
-    this -> next = node;
+void LinkedListNode::addNext(unique_ptr<LinkedListNode> node) {
+    this -> next = move(node);
 }
