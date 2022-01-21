@@ -1,4 +1,4 @@
-### LinkedList and trie implementation in C++
+### LinkedList, Trie and BinarySearchTree implementation in C++
 
 ### Build Status
 
@@ -7,7 +7,7 @@
 ### Project Structure
 Project includes `src` and `test` folders representing source and test code. 
 
-Both src and test folders contain `list` and `dictionary` folders representing `LinkedList` and Dictionary using `Trie`. 
+Both src and test folders contain `list`, `dictionary` and `tree` folders representing `LinkedList`, Dictionary using `Trie` and `BinarySearchTree`.
 
 `GoogleTest` framework is used for writing tests and `CMake` is used for builing the project.
 
