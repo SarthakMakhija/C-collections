@@ -5,10 +5,10 @@ Dictionary::Dictionary() {
     this -> root = new Trie();
 }
 
-void Dictionary::add(string word) {
+void Dictionary::add(string_view word) {
     this -> root -> add(word);
 }
 
-bool Dictionary::contains(string word) {
+bool Dictionary::contains(string_view word) {
     return this -> root -> contains(word);
 }

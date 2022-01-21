@@ -5,7 +5,7 @@ Trie::Trie() {
     this -> endOfWord = false;
 }
 
-void Trie::add(string word) {
+void Trie::add(string_view word) {
     Trie *head = this;
     for(auto ch : word) {
         if (!head -> has(ch)) {
@@ -16,7 +16,7 @@ void Trie::add(string word) {
     head -> endOfWord =  true;
 }
 
-bool Trie::contains(string word) {
+bool Trie::contains(string_view word) {
     Trie *head = this;
     for(auto ch : word) {
         if (!head -> has(ch)) {

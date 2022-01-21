@@ -12,7 +12,7 @@ class Dictionary {
 
     public:
     Dictionary();
-    void add(string word);
-    bool contains(string word);
+    void add(string_view word);
+    bool contains(string_view word);
 };
 #endif
