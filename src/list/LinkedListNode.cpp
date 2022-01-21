@@ -6,7 +6,7 @@ LinkedListNode::LinkedListNode(string key, string value) {
     this -> next = nullptr;
 }
 
-string LinkedListNode::getKey() {
+string LinkedListNode::getKey() const {
     return this -> key;
 }
 
@@ -14,11 +14,11 @@ string LinkedListNode::getValue() {
     return this -> value;
 }
 
-LinkedListNode* LinkedListNode::getNext() {
+LinkedListNode* LinkedListNode::getNext() const {
     return this -> next.get();
 }
 
-bool LinkedListNode::matches(string key) {
+bool LinkedListNode::matches(string key) const {
     return this -> key == key;
 }
 

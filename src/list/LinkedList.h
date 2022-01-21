@@ -14,7 +14,7 @@ class LinkedList {
     unique_ptr<LinkedListNode> head;
     unique_ptr<LinkedListNode> current;
 
-    pair<bool, string> findIf(function<bool (LinkedListNode*)> condition);
+    pair<bool, string> findIf(function<bool (const LinkedListNode*)> condition);
 
     public:
     LinkedList();
@@ -23,7 +23,7 @@ class LinkedList {
     bool contains(string key);
     string getBy(string key);
     vector<string> allKeys();
-    LinkedListNode* executeUntil(function<bool (LinkedListNode*)> condition, 
-                                 function<void (LinkedListNode*)> execute = [](LinkedListNode* node) {});
+    LinkedListNode* executeUntil(function<bool (const LinkedListNode*)> condition, 
+                                 function<void (const LinkedListNode*)> execute = [](const LinkedListNode* node) {});
 };
 #endif

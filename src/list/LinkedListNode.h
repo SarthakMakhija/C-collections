@@ -15,12 +15,12 @@ class LinkedListNode {
     public:
     LinkedListNode(string key, string value);
 
-    bool matches(string key);
+    bool matches(string key) const ;
     void addNext(unique_ptr<LinkedListNode> node);
     void addNext(string key, string value);
-    
-    string getKey(); 
+
+    string getKey() const; 
     string getValue();
-    LinkedListNode* getNext();
+    LinkedListNode* getNext() const;
 };
 #endif

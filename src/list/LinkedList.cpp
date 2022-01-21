@@ -11,7 +11,7 @@ void LinkedList::add(string key, string value) {
         return;
     }
     LinkedListNode *node = this -> executeUntil(
-        [] (LinkedListNode* node) -> bool {
+        [] (const LinkedListNode* node) -> bool {
             return node -> getNext() != nullptr;
         }
     );
@@ -20,7 +20,7 @@ void LinkedList::add(string key, string value) {
 
 bool LinkedList::contains(string key) {
     return this -> findIf(
-        [key] (LinkedListNode* node) -> bool {
+        [key] (const LinkedListNode* node) -> bool {
             return node -> matches(key);
         }
     ).first;
@@ -28,7 +28,7 @@ bool LinkedList::contains(string key) {
 
 string LinkedList::getBy(string key) {
      return this -> findIf(
-        [key] (LinkedListNode* node) -> bool {
+        [key] (const LinkedListNode* node) -> bool {
             return node -> matches(key);
         }
     ).second;
@@ -37,17 +37,17 @@ string LinkedList::getBy(string key) {
 vector<string> LinkedList::allKeys() {
     vector<string> keys;
     this -> executeUntil(
-        [] (LinkedListNode* node) -> bool {
+        [] (const LinkedListNode* node) -> bool {
             return node != nullptr;
         }, 
-        [&] (LinkedListNode* node) -> void {
+        [&] (const LinkedListNode* node) -> void {
             keys.push_back(node -> getKey());
         }
     );
     return keys;
 }
 
-pair<bool, string> LinkedList::findIf(function<bool (LinkedListNode*)> condition) {
+pair<bool, string> LinkedList::findIf(function<bool (const LinkedListNode*)> condition) {
     LinkedListNode *node = this -> head.get();
     while (node != nullptr) {
         if (condition(node)) {
@@ -59,8 +59,8 @@ pair<bool, string> LinkedList::findIf(function<bool (LinkedListNode*)> condition
 }
 
 
-LinkedListNode* LinkedList::executeUntil(function<bool (LinkedListNode*)> condition, 
-                                         function<void (LinkedListNode*)> execute) {
+LinkedListNode* LinkedList::executeUntil(function<bool (const LinkedListNode*)> condition, 
+                                         function<void (const LinkedListNode*)> execute) {
 
     LinkedListNode *node = this -> head.get();
     while (condition(node)) {
