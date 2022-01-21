@@ -4,6 +4,7 @@
 #include "LinkedListNode.h"
 #include <string>
 #include <vector>
+#include <functional>
 
 using namespace std;
 
@@ -11,6 +12,7 @@ class LinkedList {
     private:
     LinkedListNode *head;
     LinkedListNode *current;
+    pair<bool, string> findIf(function<bool (LinkedListNode*)> condition);
 
     public:
     LinkedList();

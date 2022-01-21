@@ -16,25 +16,26 @@ void LinkedList::add(string key, string value) {
 }
 
 bool LinkedList::contains(string key) {
-    LinkedListNode *node = this -> head;
-    while (node != nullptr) {
-        if (node -> matches(key)) {
-            return true;
-        }
-        node = node -> getNext();
-    }
-    return false;
+    return this -> findIf([key] (LinkedListNode* node) -> bool {
+        return node -> matches(key);
+    }).first;
 }
 
 string LinkedList::getBy(string key) {
+    return this -> findIf([key] (LinkedListNode* node) -> bool {
+        return node -> matches(key);
+    }).second;
+}
+
+pair<bool, string> LinkedList::findIf(function<bool (LinkedListNode*)> condition) {
     LinkedListNode *node = this -> head;
     while (node != nullptr) {
-        if (node -> matches(key)) {
-            return node -> getValue();
+        if (condition(node)) {
+            return make_pair(true, node -> getValue());
         }
         node = node -> getNext();
     }
-    return "";
+    return make_pair(false, "");
 }
 
 vector<string> LinkedList::allKeys() {
