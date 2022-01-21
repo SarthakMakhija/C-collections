@@ -10,32 +10,40 @@ void LinkedList::add(string key, string value) {
         this -> head = make_unique<LinkedListNode>(key, value);
         return;
     }
-    LinkedListNode *node = this -> head.get();
-    while(node -> getNext() != nullptr) {
-        node = node -> getNext();
-    }
+    LinkedListNode *node = this -> executeUntil(
+        [] (LinkedListNode* node) -> bool {
+            return node -> getNext() != nullptr;
+        }
+    );
     node -> addNext(key, value);
 }
 
 bool LinkedList::contains(string key) {
-    return this -> findIf([key] (LinkedListNode* node) -> bool {
-        return node -> matches(key);
-    }).first;
+    return this -> findIf(
+        [key] (LinkedListNode* node) -> bool {
+            return node -> matches(key);
+        }
+    ).first;
 }
 
 string LinkedList::getBy(string key) {
-    return this -> findIf([key] (LinkedListNode* node) -> bool {
-        return node -> matches(key);
-    }).second;
+     return this -> findIf(
+        [key] (LinkedListNode* node) -> bool {
+            return node -> matches(key);
+        }
+    ).second;
 }
 
 vector<string> LinkedList::allKeys() {
-    LinkedListNode *node = this -> head.get();
     vector<string> keys;
-    while (node != nullptr) {
-        keys.push_back(node -> getKey());
-        node = node -> getNext();
-    }
+    this -> executeUntil(
+        [] (LinkedListNode* node) -> bool {
+            return node != nullptr;
+        }, 
+        [&] (LinkedListNode* node) -> void {
+            keys.push_back(node -> getKey());
+        }
+    );
     return keys;
 }
 
@@ -48,4 +56,16 @@ pair<bool, string> LinkedList::findIf(function<bool (LinkedListNode*)> condition
         node = node -> getNext();
     }
     return make_pair(false, "");
+}
+
+
+LinkedListNode* LinkedList::executeUntil(function<bool (LinkedListNode*)> condition, 
+                                         function<void (LinkedListNode*)> execute) {
+
+    LinkedListNode *node = this -> head.get();
+    while (condition(node)) {
+        execute(node);
+        node = node -> getNext();
+    }
+    return node;
 }

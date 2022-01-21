@@ -18,10 +18,12 @@ class LinkedList {
 
     public:
     LinkedList();
-    
+
     void add(string key, string value);
     bool contains(string key);
     string getBy(string key);
     vector<string> allKeys();
+    LinkedListNode* executeUntil(function<bool (LinkedListNode*)> condition, 
+                                 function<void (LinkedListNode*)> execute = [](LinkedListNode* node) {});
 };
 #endif
