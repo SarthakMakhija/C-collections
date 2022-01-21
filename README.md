@@ -1,23 +1,32 @@
-### Linkedlist and trie implementation in C++
+### LinkedList and trie implementation in C++
 
 ### Building the project
+- Install CMake
 
-- clone the project
-    git@github.com:SarthakMakhija/C-collections.git
+    `On Mac - brew install cmake`
 
-- create a build directory
-    mkdir build
+- Clone the project
 
-- change to build directory
-    cd build
+    `git@github.com:SarthakMakhija/C-collections.git`
 
-- execute CMake
-    cmake --build . -v
+- Create a build directory
+
+    `mkdir build`
+
+- Change to build directory
+
+    `cd build`
+
+- Execute CMake
+
+    `cmake --build . -v`
 
 ### Running tests
 
-- change to build directory
-    cd build
+- Ehange to build directory
 
-- execute collections_tests
-    ./collections_tests
+    `cd build`
+
+- Execute collections_tests
+
+    `./collections_tests`
